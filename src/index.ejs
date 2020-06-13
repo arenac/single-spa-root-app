@@ -29,7 +29,10 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.5.0/lib/system/single-spa.min.js"
+        "react": "https://cdn.jsdelivr.net/npm/react@16.13.0/umd/react.production.min.js",
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.0/umd/react-dom.production.min.js",
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.5.0/lib/system/single-spa.min.js",
+        "@react-single-spa/react-single-spa": "https://localhost:8500/react-single-spa-react-single-spa.js"
       }
     }
   </script>
@@ -46,14 +49,6 @@
     }
   </script>
   <% } %>
-
-  <script type="systemjs-importmap">
-    {
-    "@react-single-spa/react-single-spa": "https://localhost:8500/react-single-spa-react-single-spa.js",
-    "react": "https://cdn.jsdelivr.net/npm/react@16.13.0/umd/react.production.min.js",
-    "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.0/umd/react-dom.production.min.js"
-  }
-  </script>
   
   <!--
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
@@ -74,13 +69,12 @@
   <% } %>
 </head>
 <body>
-  <main></main>
+  <main>
+    <application id="@react-single-spa/react-single-spa"></application>
+  </main>
   <script>
     System.import('@react-single-spa/root-config');
   </script>
-
-  
-
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>
 </html>
