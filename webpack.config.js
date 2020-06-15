@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (webpackConfigEnv) => {
   const defaultConfig = singleSpaDefaults({
-    orgName: "react-single-spa",
-    projectName: "root-config",
+    orgName: "mfe",
+    projectName: "react-root",
     webpackConfigEnv,
   });
 
